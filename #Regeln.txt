@@ -1,0 +1,12 @@
+#Regeln
+
+# Werte pow (power),know (knowlegde),Agi,Wis,Stam,X
+# min 0 max 10
+# wenn 2 werte gleich sind kommen die karten in die mitte
+# wenn einer gewinnt bekommt er beide karten und alle karten in der mitte
+# zuerst kommt die eigene karte dann die karte des gegners und dann alle in der mitte startend von der unteresten karte
+# der gewinner darf den vergleich aussuchen bei gleichstand ist es der letzte gewinner
+# game ist durch wenn ein spieler leeres deck hat
+#( vlt special power nutzen dann wird die prio geswapt)
+# 20/30 karten insgesmt 
+#requirements randomizer für den shuffle, karten ausdenke/theme, (special power)?
