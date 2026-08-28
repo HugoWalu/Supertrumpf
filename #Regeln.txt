@@ -9,4 +9,4 @@
 # game ist durch wenn ein spieler leeres deck hat
 #( vlt special power nutzen dann wird die prio geswapt)
 # 20/30 karten insgesmt 
-#requirements randomizer für den shuffle, karten ausdenke/theme, (special power)?
+#requirements randomizer für den shuffle, karten ausdenke/theme, (special power)? queues für decks und mitte einen input erwarter
