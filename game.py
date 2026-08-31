@@ -5,4 +5,4 @@ from cards import *
 shuffled_deck = random.shuffle(deck)
 my_deck = Queue()
 opponent_deck = Queue()
-
+middle_pile = Queue()
