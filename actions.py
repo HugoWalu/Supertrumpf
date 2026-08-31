@@ -2,9 +2,9 @@ from queue import Queue
 from cards import Card, unshuffled_deck
 import random
 
-middle_pile = Queue()
 my_deck = Queue()
 opponent_deck = Queue()
+middle_pile = Queue()
 
 def prep_decks(unshuffled_deck):
     random.shuffle(unshuffled_deck)
@@ -24,7 +24,7 @@ def status_top_card(deck = my_deck):
 def check_deck_size(d1 = my_deck, d2 = opponent_deck)-> None:
     return f"My deck size: {d1.size()}\nOppenent deck size:{d2.size()}"
 
-def compare_stats(d1 = my_deck, d2 = opponent_deck, pile = middle_pile):
+def compare_stats(d1 = my_deck, d2 = opponent_deck, pile = middle_pile)-> str:
     x = input("Enter a stat: ").strip().lower()
 
     stat_map = {
@@ -47,6 +47,7 @@ def compare_stats(d1 = my_deck, d2 = opponent_deck, pile = middle_pile):
     attr = stat_map.get(x)
     if attr is None:
         print("Invalid stat")
+        compare_stats()
     else:
         astat = getattr(a, attr)
         bstat = getattr(b,attr)
@@ -55,6 +56,7 @@ def compare_stats(d1 = my_deck, d2 = opponent_deck, pile = middle_pile):
         print(f"My {a.name} with {x} {astat} tied against your {b.name} with {x} {bstat}")
         pile.push(a)
         pile.push(b)
+        return "Tie"
     elif (astat > bstat):
         print(f"My {a.name} with {x} {astat} wins against your {b.name} with {x} {bstat}")
         d1.push(a)
@@ -63,6 +65,7 @@ def compare_stats(d1 = my_deck, d2 = opponent_deck, pile = middle_pile):
             for i in range(0,pile.size()):
                 tmp = pile.pop()
                 d1.push(tmp)
+        return "Win"
     else:
         print(f"My {a.name} with {x} {astat} loses against your {b.name} with {x} {bstat}")
         d2.push(b)
@@ -71,6 +74,7 @@ def compare_stats(d1 = my_deck, d2 = opponent_deck, pile = middle_pile):
             for i in range(0,pile.size()):
                 tmp = pile.pop()
                 d2.push(tmp)
+        return "Lose"
 
 
 def main():
