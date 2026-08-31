@@ -1,17 +1,18 @@
 from queue import Queue
-from cards import Card
+from cards import Card, unshuffled_deck
+import random
 
-a = Card("Wizard",2,10,2,8,3,6)
-b = Card("Dragon",10,5,4,6,7,2)    
-c = Card("Valstraz",7,2,10,3,6,6)
-d = Card("Unicord,",5,5,7,10,3,1)
 middle_pile = Queue()
 my_deck = Queue()
 opponent_deck = Queue()
-my_deck.push(a)
-my_deck.push(b)
-opponent_deck.push(c)
-opponent_deck.push(d)
+
+def prep_decks(unshuffled_deck):
+    random.shuffle(unshuffled_deck)
+    for i in range(0,len(unshuffled_deck)):
+        if i % 2 == 0:
+            my_deck.push(unshuffled_deck[i])
+        else:
+            opponent_deck.push(unshuffled_deck[i])
 
 def status_top_card(deck = my_deck):
     if deck.size() == 0:
@@ -72,3 +73,7 @@ def compare_stats(d1 = my_deck, d2 = opponent_deck, pile = middle_pile):
                 d2.push(tmp)
 
 
+def main():
+   pass
+
+main()
