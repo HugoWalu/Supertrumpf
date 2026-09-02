@@ -1,7 +1,7 @@
-from cards import Card
+from game import*
 
 def main():
-    pass
+    supertrumpf()
 
 
 main()

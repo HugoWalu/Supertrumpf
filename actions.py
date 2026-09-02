@@ -1,5 +1,5 @@
 from queue import Queue
-from cards import Card, unshuffled_deck
+from cards import Card,unshuffled_deck
 import random
 
 my_deck = Queue()
@@ -127,7 +127,15 @@ def switch(result, turn)->str:
         if turn == "Lose":
             return "Win"
         else:
-            return "Lose"   
+            return "Lose"
+
+def check_opp_topcard(SP_uses, deck = opponent_deck):
+    if SP_uses == 0:
+        print("No more Special powers")
+        return
+    else:
+        print(deck.peek().check())
+        return 
 
 def main():
    pass
