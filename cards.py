@@ -24,14 +24,14 @@ class Card():
 
 unshuffled_deck: list[Card] =[
     Card("Wizard",2,10,2,8,3,6),
+    Card("Unicorn,",5,5,7,10,3,1),
+    Card("Ricky",3,7,2,6,3,10),
+    Card("Anime Guy",1,7,2,8,3,6),
     Card("Dragon",10,5,4,6,7,2),
     Card("Valstraz",7,2,10,3,6,6),
-    Card("Unicorn,",5,5,7,10,3,1),
     Card("Sage",1,8,1,10,4,9),
-    Card("Ricky",3,7,2,6,3,10),
     Card("Joe",5,5,5,5,5,5),
     Card("Gato",3,7,7,5,6,2),
-    Card("Anime Guy",1,7,2,8,3,6),
     Card("Boba",4,7,6,7,2,8),
     Card("Jimmy",2,9,4,9,4,6),
     Card("Hulk",7,3,6,7,7,3),

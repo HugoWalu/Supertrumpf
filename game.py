@@ -5,14 +5,20 @@ from actions import *
 
 def supertrumpf(d1 = my_deck, d2 = opponent_deck):
     prep_decks(unshuffled_deck)
+    turn = ""
     while (d1.size() != 0 and d2.size() != 0):
-        x = input("Check Decksize, Compare Stats, Check Topcard").strip().lower()
+        while turn == "Lose":
+            result = opponent_turn()
+            turn = switch(result,turn)
+            break
+        x = input("Check Decksize, Compare Stats, Check Topcard ").strip().lower()
 
         action_map = {
             "size": "size",
             "decksize": "size",
             "check decksize": "size",
             "stats": "stats",
+            "stat": "stats",
             "compare stats": "stats",
             "card": "card",
             "check card": "card",
@@ -27,8 +33,9 @@ def supertrumpf(d1 = my_deck, d2 = opponent_deck):
         elif action == "card":
             print(status_top_card())
         else:
-            compare_stats()
-    if d1.size == 0:
+            result = compare_stats()
+            turn = switch(result,turn)
+    if d1.size() == 0:
         print("You lose!")
         return
     else:
